@@ -32,13 +32,13 @@ const routes = [
     children: [
       {
         path: '/admin',
-        name: 'inventory',
-        component: Inventory
-      },
-      {
-        path: '/admin/orders',
         name: 'orders',
         component: BakerOrders
+      },
+      {
+        path: '/admin/inventory',
+        name: 'inventory',
+        component: Inventory
       },
     ]
   },

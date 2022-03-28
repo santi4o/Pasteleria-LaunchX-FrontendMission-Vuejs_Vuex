@@ -37,11 +37,11 @@
     <div>
       <input
         type="checkbox"
-        id="chocolate"
+        id="chocolateDecoration"
         name="decorations"
         value="chocolate"
       />
-      <label for="chocolate">Chocolate</label>
+      <label for="chocolateDecoration">Chocolate</label>
     </div>
     <div>
       <input

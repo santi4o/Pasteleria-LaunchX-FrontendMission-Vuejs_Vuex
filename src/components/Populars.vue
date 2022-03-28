@@ -106,7 +106,7 @@
       <p>$ 300</p>
     </div>
     <div class="wide">
-      <a href="new-order.html">Hacer nuevo pedido personalizado</a>
+      <router-link to="/new_order" @click="scrollToTop">Hacer nuevo pedido personalizado</router-link>
     </div>
   </article>
 </template>
@@ -114,5 +114,10 @@
 <script>
 export default {
   name: "Populars",
+  methods: { 
+  scrollToTop() {
+    window.scrollTo(0,0);
+  }
+}
 };
 </script>

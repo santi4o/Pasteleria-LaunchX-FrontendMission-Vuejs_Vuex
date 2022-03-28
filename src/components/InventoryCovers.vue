@@ -9,25 +9,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Fondant</td>
-          <td>130</td>
-        </tr>
-        <tr>
-          <td>Crema batida</td>
-          <td>232</td>
-        </tr>
-        <tr>
-          <td>Chantillí</td>
-          <td>343</td>
-        </tr>
-        <tr>
-          <td>Queso</td>
-          <td>194</td>
-        </tr>
-        <tr>
-          <td>Chocolate</td>
-          <td>103</td>
+        <tr v-for="cover in $store.state.covers" :key="cover._id">
+          <td>{{ cover.name }}</td>
+          <td>{{ cover.quantity }} </td>
         </tr>
       </tbody>
     </table>

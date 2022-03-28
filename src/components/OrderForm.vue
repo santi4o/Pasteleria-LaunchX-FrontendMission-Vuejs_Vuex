@@ -27,11 +27,10 @@
       <label for="email">Correo electrónico: </label>
       <input type="email" id="email" name="email" required />
     </div>
-    {{ $store.state.orders }}
     <!--<div id="submitDiv">
       <router-link to="/" id="submitBtn" @click="submit()">Hacer pedido</router-link>
     </div>-->
-    <input type="submit" value="test" id='submitBtn'>
+    <input type="submit" value="Hacer Pedido" id='submitBtn'>
     <!--<button id="submitBtn" value="Hacer pedido" @click.prevent="submit()">hacer pedido</button>-->
   </form>
 </template>
@@ -59,6 +58,7 @@ export default {
       var newNumber = this.$store.state.orders.length + 1;
       var newName = document.getElementById('name').value;
       var newTel = document.getElementById('tel').value;
+      var newEmail = document.getElementById('email').value;
       var newFlavor1 = document.getElementById('flavorChoice1').value;
       var newFlavor2 = document.getElementById('flavorChoice2').value;
       var newCover = document.querySelector('input[name="cover"]:checked').value;
@@ -73,6 +73,7 @@ export default {
         number: newNumber,
         name: newName,
         tel: newTel,
+        email: newEmail,
         flavor1: newFlavor1,
         flavor2: newFlavor2,
         cover: newCover,
@@ -80,7 +81,7 @@ export default {
         notes: newNotes
       }
       this.$store.dispatch("updateOrders", order);
-      alert("pedido realizado")
+      alert("¡Pedido Realizado! Gracias por su orden")
       document.getElementById('newOrder').reset();
     }
   }

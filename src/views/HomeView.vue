@@ -8,7 +8,7 @@
     </div>
     <nav>
       <router-link to="/new_order">Hacer Nuevo Pedido</router-link>
-      <router-link to="/admin">Mi cuenta</router-link>
+      <router-link to="/admin">Mi cuenta (Pastelero)</router-link>
     </nav>
   </header>
   <div class="banner"></div>

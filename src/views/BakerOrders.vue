@@ -16,49 +16,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Rodrigo Martínez</td>
-          <td>5511223344</td>
-          <td>rmartinez@launchx.com</td>
-          <td>Té verde</td>
-          <td>Té verde</td>
-          <td>Crema batida</td>
-          <td>Null</td>
-          <td>La crema batida de la cubierta que sea color verde claro</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Silvia Herrera</td>
-          <td>5522334455</td>
-          <td>sherrera@devf.com</td>
-          <td>Nuez</td>
-          <td>Chocolate</td>
-          <td>Chocolate</td>
-          <td>Nueces, chocolate</td>
-          <td>La cubierta que sea delgada</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Miguel Velasco</td>
-          <td>5533445566</td>
-          <td>mvelasco@metabaseq.com</td>
-          <td>Vainilla</td>
-          <td>Limón</td>
-          <td>Crema batida</td>
-          <td>Galletas, Gotas de crema batida</td>
-          <td>Null</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Aldo Santiago</td>
-          <td>5544556677</td>
-          <td>asantiago@gmail.com</td>
-          <td>Chocolate</td>
-          <td>Chocolate</td>
-          <td>Queso</td>
-          <td>Mermelada de zarzamora</td>
-          <td>Null</td>
+        <tr v-for="order in  $store.state.orders" :key="order._id">
+          <td>{{ order.number }}</td>
+          <td>{{ order.name }}</td>
+          <td>{{ order.tel }}</td>
+          <td>{{ order.email }}</td>
+          <td>{{ order.flavor1 }}</td>
+          <td>{{ order.flavor2 }}</td>
+          <td>{{ order.cover }}</td>
+          <td>
+            <li v-for="decoration in order.decorations" :key="decoration._id">
+              {{ decoration }}
+            </li>
+          </td>
+          <td>{{ order.notes }}</td>
         </tr>
       </tbody>
     </table>

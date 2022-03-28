@@ -7,12 +7,15 @@
       <p class="slogan">Experiencias para compartir</p>
     </div>
     <nav>
-      <router-link to="/admin">Inventario</router-link>
-      <router-link to="/admin/orders">Órdenes</router-link>
+      <router-link to="/">Regresar a Inicio</router-link>
+      <router-link to="/admin">Órdenes</router-link>
+      <router-link to="/admin/inventory">Inventario de Pastelería</router-link>
     </nav>
   </header>
   <div class="banner"></div>
-
+  <div id="welcomeMessage">
+      <h2>Bienvenido Administrador</h2>
+  </div>
   <main>
       <router-view/>
   </main>
@@ -24,6 +27,11 @@
   background-image: url("@/assets/banner.jpg");
   height: 17vw;
   background-size: cover;
+}
+
+#welcomeMessage {
+  display: flex;
+  justify-content: center;
 }
 </style>
 

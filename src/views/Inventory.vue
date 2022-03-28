@@ -1,5 +1,4 @@
 <template>
-  {{ $store.state.orders }}
     <section id="inventory">
         <InventoryFlavors/>
         <InventoryCovers/>
