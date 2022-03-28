@@ -7,6 +7,7 @@
       <p class="slogan">Experiencias para compartir</p>
     </div>
     <nav>
+      <router-link to="/">Pasteles</router-link>
       <router-link to="/new_order">Hacer Nuevo Pedido</router-link>
       <router-link to="/admin">Mi cuenta (Pastelero)</router-link>
     </nav>

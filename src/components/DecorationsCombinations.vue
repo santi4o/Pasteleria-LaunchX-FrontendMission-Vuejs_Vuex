@@ -71,11 +71,20 @@
     <div>
       <input
         type="checkbox"
-        id="mermelada"
+        id="mermeladaZ"
         name="decorations"
-        value="mermelada"
+        value="mermelada de zarzamora"
       />
-      <label for="mermelada">Mermelada de zarzamora</label>
+      <label for="mermeladaZ">Mermelada de zarzamora</label>
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        id="mermeladaF"
+        name="decorations"
+        value="mermelada de fresa"
+      />
+      <label for="mermeladaF">Mermelada de fresa</label>
     </div>
   </div>
 </template>
