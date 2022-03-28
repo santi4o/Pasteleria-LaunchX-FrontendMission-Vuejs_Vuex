@@ -17,6 +17,5 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0"
-  },
-  "homepage" : "https://santi4o.github.io/Pasteleria-LaunchX-FrontendMission-Vuejs_Vuex/",
+  }
 }
