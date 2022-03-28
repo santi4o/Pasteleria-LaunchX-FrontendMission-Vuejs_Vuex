@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <header>
+    <div class="brand">
+      <router-link to="/">
+        <img class="logo" src="@/assets/logo.png" alt="Dolce Dolce Pastelería"/>
+      </router-link>
+      <p class="slogan">Experiencias para compartir</p>
+    </div>
+    <nav>
+      <router-link to="/new_order">Hacer Nuevo Pedido</router-link>
+      <a href="/#flavors">Sabores</a>
+      <a href="/#covers">Cubiertas</a>
+      <a href="/#decorations">Decoraciones</a>
+      <router-link to="/admin">Mi cuenta</router-link>
+    </nav>
+  </header>
+  <div class="banner"></div>
+  <router-view/>
+  <About/>
 </template>
 
+<style>
+.banner {
+    background-image: url("@/assets/banner.jpg");
+    height: 17vw;
+    background-size:cover;
+}
+</style>
+
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import About from "@/components/About.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld
-  }
-}
+    About,
+  },
+};
 </script>

@@ -1,11 +1,46 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+//import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Baker from '../views/Baker.vue'
+import NewOrder from '../views/NewOrder.vue'
+import Products from '../views/Products.vue'
+import Inventory from '../views/Inventory.vue'
+import BakerOrders from '../views/BakerOrders.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children: [
+      {
+        path: '/',
+        name: 'products',
+        component: Products
+      },
+      {
+        path: '/new_order',
+        name: 'newOrder',
+        component: NewOrder
+      }
+    ]
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Baker,
+    children: [
+      {
+        path: '/admin',
+        name: 'inventory',
+        component: Inventory
+      },
+      {
+        path: '/admin/orders',
+        name: 'orders',
+        component: BakerOrders
+      },
+    ]
   },
   {
     path: '/about',
@@ -18,7 +53,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
