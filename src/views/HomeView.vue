@@ -8,13 +8,11 @@
     </div>
     <nav>
       <router-link to="/new_order">Hacer Nuevo Pedido</router-link>
-      <a href="/#flavors">Sabores</a>
-      <a href="/#covers">Cubiertas</a>
-      <a href="/#decorations">Decoraciones</a>
       <router-link to="/admin">Mi cuenta</router-link>
     </nav>
   </header>
   <div class="banner"></div>
+
   <router-view/>
   <About/>
 </template>

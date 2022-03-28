@@ -1,5 +1,5 @@
 <template>
-  <form action="/">
+  <form id="newOrder" v-on:submit.prevent="onSubmit()">
     <FlavorsCombinations />
     <CoverSelection />
     <DecorationsCombinations />
@@ -8,7 +8,13 @@
     <p>Datos de contacto</p>
     <div id="contactInput">
       <label for="name">Nombre: </label>
-      <input type="text" id="name" name="name" pattern="[a-zA-Z ]+" required />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        pattern="[a-zA-Z ]+"
+        required
+      />
       <label for="tel">Teléfono: </label>
       <input
         type="tel"
@@ -21,9 +27,20 @@
       <label for="email">Correo electrónico: </label>
       <input type="email" id="email" name="email" required />
     </div>
-    <input id="submitBtn" type="submit" value="Hacer pedido" />
+    {{ $store.state.orders }}
+    <!--<div id="submitDiv">
+      <router-link to="/" id="submitBtn" @click="submit()">Hacer pedido</router-link>
+    </div>-->
+    <input type="submit" value="test" id='submitBtn'>
+    <!--<button id="submitBtn" value="Hacer pedido" @click.prevent="submit()">hacer pedido</button>-->
   </form>
 </template>
+
+<style scoped>
+  #submitDiv {
+    display: flex;
+  }
+</style>
 
 <script>
 import FlavorsCombinations from "@/components/FlavorsCombinations.vue";
@@ -37,5 +54,35 @@ export default {
     CoverSelection,
     DecorationsCombinations,
   },
+  methods: {
+    onSubmit() {
+      var newNumber = this.$store.state.orders.length + 1;
+      var newName = document.getElementById('name').value;
+      var newTel = document.getElementById('tel').value;
+      var newFlavor1 = document.getElementById('flavorChoice1').value;
+      var newFlavor2 = document.getElementById('flavorChoice2').value;
+      var newCover = document.querySelector('input[name="cover"]:checked').value;
+      var newNotes = document.getElementById('notes').value;
+      var selectedDecorations = document.querySelectorAll('input[name="decorations"]:checked');
+      var newDecorations = [];
+      for (var i = 0; i < selectedDecorations.length; i++) {
+        newDecorations.push(selectedDecorations[i].value);
+      }
+
+      var order = {
+        number: newNumber,
+        name: newName,
+        tel: newTel,
+        flavor1: newFlavor1,
+        flavor2: newFlavor2,
+        cover: newCover,
+        decorations: newDecorations,
+        notes: newNotes
+      }
+      this.$store.dispatch("updateOrders", order);
+      alert("pedido realizado")
+      document.getElementById('newOrder').reset();
+    }
+  }
 };
 </script>
